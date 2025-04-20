@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Grantham Pressure Washing</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="testimonials.html">Testimonials</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="glass">
+      <section>
+        <h2>Our Services</h2>
+        <ul>
+          <li><strong>Residential Pressure Washing:</strong> Restore your home’s exterior with our top-quality services. We specialize in cleaning driveways, patios, siding, and roofs.</li>
+          <li><strong>Commercial Pressure Washing:</strong> Keep your business looking its best with our expert commercial cleaning services. We handle buildings, parking lots, and more.</li>
+          <li><strong>Veteran Property Assistance:</strong> As part of our commitment to the community, we offer free services to veterans in need.</li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="glass">
+      <h2>Get an Estimate</h2>
+      <form id="quote-form">
+        <label for="sqft">Enter Square Footage:</label>
+        <input type="number" id="sqft" name="sqft" required>
+        <label for="service-type">Select Service Type:</label>
+        <select id="service-type" name="service-type">
+          <option value="residential">Residential</option>
+          <option value="commercial">Commercial</option>
+        </select>
+        <button type="submit">Get Estimate</button>
+        <p id="quote-result"></p>
+      </form>
+      <p><strong>Contact us for final verification and booking:</strong> <a href="contact.html">Contact Us</a></p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy;  Grantham Pressure Washing</p>
+  </footer>
+
+  <script>
+    // JavaScript for estimate functionality
+    document.getElementById("quote-form").addEventListener("submit", function(event) {
+      event.preventDefault(); // Prevent the form from submitting
+      
+      // Get square footage and service type
+      const sqft = document.getElementById("sqft").value;
+      const serviceType = document.getElementById("service-type").value;
+      
+      // Base pricing (per sqft) for residential and commercial
+      let pricePerSqft = serviceType === "residential" ? 0.15 : 0.20;
+      let estimatedPrice = sqft * pricePerSqft;
+
+      // Display the estimated price
+      document.getElementById("quote-result").textContent = `Estimated Price: $${estimatedPrice.toFixed(2)}`;
+
+      // Optional: Offer contact link for verification
+      document.getElementById("quote-result").innerHTML ;
+    });
+  </script>
+</body>
+</html>
