@@ -1,15 +1,12 @@
-/* Base Colors */
 :root {
-  --accent-red: #b22234; /* American Red */
-  --accent-blue: #3c3b6e; /* American Blue */
-  --bright-yellow: #ffcc00; /* Bright Yellow */
+  --accent-red: #B22234; /* American Red */
+  --accent-blue: #0033A0; /* True American Blue */
   --text-color: #222;
   --bg-glass: rgba(255, 255, 255, 0.1);
   --border-glass: rgba(255, 255, 255, 0.2);
   --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Body and General Styling */
 body {
   margin: 0;
   padding: 0;
@@ -18,9 +15,8 @@ body {
   color: var(--text-color);
 }
 
-/* Header */
 header {
-  background: linear-gradient(to right, var(--accent-blue), var(--accent-red));
+  background: linear-gradient(to right, var(--accent-blue), var(--accent-red)); /* Defined Red and Blue */
   color: white;
   backdrop-filter: blur(6px);
   border-bottom: 2px solid white;
@@ -40,7 +36,6 @@ header p {
   color: #f8f8f8;
 }
 
-/* Navigation */
 nav ul {
   list-style: none;
   padding: 0;
@@ -55,8 +50,9 @@ nav a {
   text-decoration: none;
   font-weight: bold;
   color: var(--text-color);
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.25rem; /* Slightly larger padding */
   border-radius: 8px;
+  font-size: 1.1rem; /* Increased font size */
   transition: background-color 0.3s;
 }
 
@@ -65,7 +61,6 @@ nav a:hover {
   color: white;
 }
 
-/* Main Content */
 main {
   padding: 2rem;
 }
@@ -129,13 +124,6 @@ main {
   border-radius: 12px;
   font-style: italic;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.quote-block:hover {
-  transform: scale(1.02);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  cursor: pointer;
 }
 
 .quote-block::before {
@@ -162,64 +150,4 @@ main {
   text-align: right;
   font-weight: bold;
   color: var(--accent-blue);
-}
-
-/* Testimonials Images */
-.testimonial-img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 0.5rem;
-  border: 3px solid var(--accent-blue);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  background: var(--accent-blue);
-  color: white;
-  padding: 1rem;
-  font-size: 1rem;
-}
-
-footer p {
-  margin: 0;
-}
-
-/* Hover Effect for Interactive Elements */
-button, .cta-button, nav a {
-  transition: all 0.3s ease;
-}
-
-button:hover, .cta-button:hover, nav a:hover {
-  background-color: var(--accent-red);
-  color: white;
-  transform: scale(1.05);
-}
-
-/* Media Queries */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 2rem;
-  }
-
-  .quote-block {
-    font-size: 1rem;
-    max-width: 90%;
-  }
-
-  .testimonial-img {
-    width: 70px;
-    height: 70px;
-  }
-
-  nav {
-    flex-direction: column;
-  }
-
-  nav a {
-    margin: 0.5rem 0;
-  }
 }
